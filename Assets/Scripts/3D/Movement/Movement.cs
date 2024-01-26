@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class Movement : MonoBehaviour
+{
 
     public float moveSpeed = 5.0f;
     public float turnSpeed = 200.0f;
@@ -12,7 +13,7 @@ public class Movement : MonoBehaviour {
     private float inputHorizontal;
 
 
-   void Update()
+    void Update()
     {
         // Get input from keyboard
         inputVertical = Input.GetAxis("Vertical");
