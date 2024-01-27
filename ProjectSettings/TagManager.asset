@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Arrow
+  - Knife
+  - KnifeInScene
   layers:
   - Default
   - TransparentFX
@@ -11,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - MovableObjects
+  - SceneObjects
+  - Background
   - 
   - 
   - 
@@ -40,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3178914369
+    locked: 0
+  - name: Scene Objects
+    uniqueID: 3919646105
+    locked: 0
+  - name: Instantiated Objects
+    uniqueID: 4004930867
     locked: 0
