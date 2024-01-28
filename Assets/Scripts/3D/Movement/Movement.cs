@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
 
         // Rotate the character left or right
         transform.Rotate(Vector3.up, inputHorizontal * turnSpeed * Time.deltaTime);
-
+        
         // Set the Animator parameter to control the walk animation
         // animator.SetFloat("Speed", Mathf.Abs(inputVertical));
     }
