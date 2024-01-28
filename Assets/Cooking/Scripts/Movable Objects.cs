@@ -31,6 +31,8 @@ public class MovableObject : MonoBehaviour
     private Rigidbody2D childRB; 
     private Collider2D genericCollider;
 
+    public bool isKnife = false;
+
     private float edgeColliderBelowRadius = 1.5f;
     // [SerializeField]
     // private float radius;
@@ -46,6 +48,8 @@ public class MovableObject : MonoBehaviour
         childRB = edgeColliderChild.GetComponent<Rigidbody2D>();
         childRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.isKinematic = true;
+
+        isKnife = false;
 
     }
 
@@ -72,7 +76,7 @@ public class MovableObject : MonoBehaviour
         if (screenPosition.x < (0 - screenOffset) || screenPosition.x > (1 + screenOffset)
             || screenPosition.y < (0 - screenOffset) || screenPosition.y > (1 + screenOffset))
         {
-            //Debug.Log("Went off screen");
+            Debug.Log("Went off screen");
             DestroyAndRespawn();
         }
     }
@@ -152,9 +156,12 @@ public class MovableObject : MonoBehaviour
         }
         else
         {
-            ResetRotation();
-            if (!SpawnItemManager.Instance.isKnife)
+
+            Debug.Log(isKnife);
+            if (isKnife == false)
             {
+                ResetRotation();
+                //Debug.Log("IN POSITION AND DESTSROYING AND IS NOT KNIFE");
                 SpawnItemManager.Instance.DestroyArrowObjectAndLoadNext();
             }
          

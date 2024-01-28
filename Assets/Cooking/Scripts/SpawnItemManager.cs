@@ -13,7 +13,8 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
     private GameObject currentArrowPrefab;
     public GameObject knifeInScene;
 
-    public bool isKnife = false;
+    //public bool isKnife = false;
+    public bool activatedKnife = false; 
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && objectPrefabs[instructionIndex].tag == "Knife")
+        if (Input.GetMouseButtonDown(0) && objectPrefabs[instructionIndex].tag == "Knife" && (activatedKnife == false))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -38,8 +39,8 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
                 if (hit.collider.gameObject == knifeInScene)
                 {
                     //Debug.Log("HIT");
+                    //isKnife = true;
                     HandleKnifeInSceneClick();
-                    isKnife = true;
                     //InstantiateObjPrefab(instructionIndex);
                 }
             }
@@ -55,6 +56,8 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
 
         // Activate the knife handling logic
         KnifeHandler.Instance.ActivateKnife();
+        activatedKnife = true;
+
     }
 
     void InstantiateObjPrefab(int index)
@@ -64,17 +67,17 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
             if (objectPrefabs[index].tag == "Knife")
             {
                 // ALL INGREDIENTS NOW ON CHOPPING BOARD
-             
-                if (isKnife)
-                {
-                    //Debug.Log("Clicked On Knife");
-                    //Destroy(knifeInScene);
-                    //Destroy(currentArrowPrefab);
-                    //Instantiate(objectPrefabs[index], spawnObjectPositionTransform.position, Quaternion.identity);
-                    //InstantiateArrowPrefab(instructionIndex);
-                    //instructionIndex++;
-                    //isKnife = false;
-                }
+
+                //if (isKnife)
+                //{
+                //    //Debug.Log("Clicked On Knife");
+                //    //Destroy(knifeInScene);
+                //    //Destroy(currentArrowPrefab);
+                //    //Instantiate(objectPrefabs[index], spawnObjectPositionTransform.position, Quaternion.identity);
+                //    //InstantiateArrowPrefab(instructionIndex);
+                //    //instructionIndex++;
+                //    //isKnife = false;
+                //}
             }
             else
             {
@@ -86,6 +89,8 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
         {
             Debug.Log("No Object at index 0 in spawn objects array");
         }
+
+
 
     }
 

@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cuttingKnifePrefab: {fileID: 2390921695061203704, guid: 02a1f4765eda0f044af45ac0867393de, type: 3}
-  jitterAmount: 0.1
+  jitterAmount: 0.4
   impulseAmount: 2.5
   constantImpulseStrength: 1
   isDragging: 0

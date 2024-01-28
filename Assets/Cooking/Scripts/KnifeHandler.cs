@@ -7,7 +7,9 @@ public class KnifeHandler : SingletonMonobehaviour<KnifeHandler>
     public GameObject knifePrefab; // Assign in Inspector
     public GameObject cuttingKnifePrefab;
     private GameObject currentKnifeInstance;
-    private bool isKnifeActive = false;
+    public GameObject tomatoParticlePrefab;
+    public bool isKnifeActive;
+    public Sprite cutTomatoSprite;
 
     //public void HandleKnifeClick()
     //{
@@ -17,17 +19,32 @@ public class KnifeHandler : SingletonMonobehaviour<KnifeHandler>
     //    }
     //}
 
+    private void Start()
+    {
+        isKnifeActive = false;
+    }
+
     private void Update()
     {
         if (isKnifeActive)
         {
             FollowMouseCursor();
         }
+
+        //Knife knife = currentKnifeInstance.gameObject.GetComponent<Knife>();
+        //if (knife != null)
+        //{
+        //    Debug.Log("KNIFE IS DRAGGING");
+        //    knife.isDragging = true;
+        //}
     }
     public void ActivateKnife()
     {
         isKnifeActive = true;
+        //Debug.Log("Knife is now active");
+        //Debug.Log(isKnifeActive);
         currentKnifeInstance = Instantiate(knifePrefab, Vector3.zero, Quaternion.identity);
+        
         //currentKnifeInstance.GetComponent<Knife>().isDragging = true;
     }
 
@@ -55,11 +72,43 @@ public class KnifeHandler : SingletonMonobehaviour<KnifeHandler>
 
         if (hit.collider != null && hit.collider.CompareTag("Tomato"))
         {
+            //
+            hit.collider.gameObject.GetComponent<MovableObject>().isKnife = true;
+
+            Destroy(currentKnifeInstance);
             currentKnifeInstance = Instantiate(cuttingKnifePrefab, Vector3.zero, Quaternion.identity);
-            
+
+            Animator knifeAnimator = currentKnifeInstance.GetComponentInChildren<Animator>();
+
+            if (knifeAnimator != null)
+            {
+                knifeAnimator.SetBool("isCutting", true); 
+
+                // Optional: Reset the animation state to allow restarting
+                knifeAnimator.Play("Cutting", -1, 0f);
+                knifeAnimator.SetBool("isCutting", false);
+            }
+
+            // Particle Effects
+            GameObject particleEffect = Instantiate(tomatoParticlePrefab, hit.point, Quaternion.identity);
+            ParticleSystem ps = particleEffect.GetComponent<ParticleSystem>();
+
+            if (ps != null)
+            {
+                ps.Play();
+                //float totalDuration = ps.main.duration + ps.main.startDelay.constantMax;
+                //Destroy(particleEffect, totalDuration);
+            }
+
+
+
+            // Change tag so that the game knows when everything is cut
+            hit.collider.gameObject.tag = "CutTomato";
+
             // Trigger cut animation or change sprite
-            // You can also call a method on the Tomato object to handle being cut
-            Debug.Log("Tomato cut!");
+            SpriteRenderer spriteRenderer = hit.collider.gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = cutTomatoSprite;
+      
             // Example: hit.collider.gameObject.GetComponent<Tomato>().Cut();
         }
     }

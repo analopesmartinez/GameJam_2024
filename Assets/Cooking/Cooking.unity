@@ -260,6 +260,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 808551463188820486, guid: c937ddf92ada3ce4ea5e72130f532e86, type: 3}
+  cuttingKnifePrefab: {fileID: 2390921695061203704, guid: 02a1f4765eda0f044af45ac0867393de, type: 3}
+  tomatoParticlePrefab: {fileID: 1392825901724780503, guid: e6b19d1ec5fad434db2d18ac33d8706f, type: 3}
+  isKnifeActive: 0
+  cutTomatoSprite: {fileID: 21300000, guid: 29469f7d7aa2fd641a31af83c10f500e, type: 3}
 --- !u!1 &989703108
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,50 +295,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1031828325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1031828326}
-  - component: {fileID: 1031828327}
-  m_Layer: 0
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1031828326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031828325}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2136985, y: 0.5576367, z: -0.02828459}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1031828327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031828325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0daa82104e60764dbedde8769125730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1109245510
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273215641}
   - component: {fileID: 1273215640}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Kitchen Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1510897393}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Kitchen Counter Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,6 +504,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1273215641}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1818423707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818423709}
+  - component: {fileID: 1818423708}
+  m_Layer: 0
+  m_Name: End Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1818423708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818423707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e822fb70cffe94cbe28af2d2709849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 1392825901724780503, guid: e6b19d1ec5fad434db2d18ac33d8706f, type: 3}
+--- !u!4 &1818423709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818423707}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.053516977, y: 1.3600113, z: -0.14554252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1985389537
 GameObject:
@@ -586,10 +591,9 @@ MonoBehaviour:
   - {x: -3.32, y: 1.94, z: 0}
   - {x: -0.96, y: 1.94, z: 0}
   - {x: 1.81, y: 3.55, z: 0}
-  - {x: -3.32, y: 1.94, z: 0}
   instructionIndex: 0
   knifeInScene: {fileID: 0}
-  isKnife: 0
+  activatedKnife: 0
 --- !u!4 &1985389539
 Transform:
   m_ObjectHideFlags: 0
@@ -780,6 +784,10 @@ PrefabInstance:
       value: KnifeInScene
       objectReference: {fileID: 0}
     - target: {fileID: 5605410207881294591, guid: 39adaa4fec401ac499738c6c70b31110, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605410207881294591, guid: 39adaa4fec401ac499738c6c70b31110, type: 3}
       propertyPath: m_TagString
       value: KnifeInScene
       objectReference: {fileID: 0}
@@ -798,8 +806,8 @@ SceneRoots:
   - {fileID: 1273215641}
   - {fileID: 7246857998985316597}
   - {fileID: 1474350792570352604}
-  - {fileID: 1031828326}
   - {fileID: 989703109}
   - {fileID: 1985389539}
   - {fileID: 7903493278110790780}
   - {fileID: 467399794}
+  - {fileID: 1818423709}
