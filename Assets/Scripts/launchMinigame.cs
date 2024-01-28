@@ -9,8 +9,13 @@ public class launchMinigame : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-        SceneManager.LoadScene("Mat");
-        
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("TRIGGERED");
+
+            SceneManager.LoadScene("CookingUpdated");
+
+        }
+
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
+public class SpawnItemManagerBrush : SingletonMonobehaviour<SpawnItemManagerBrush>
 {
     // DON'T FORGET THE OFFSET IN THE POSITIONS
     public GameObject arrowPrefab;
@@ -11,14 +11,14 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
     public Vector3[] spawnArrowPositions;
     public int instructionIndex = 0;
     private GameObject currentArrowPrefab;
-    public GameObject knifeInScene;
+    public GameObject brushInScene;
 
     //public bool isKnife = false;
-    public bool activatedKnife = false; 
+    public bool activatedBrush = false; 
 
     private void Start()
     {
-        knifeInScene = GameObject.FindGameObjectWithTag("KnifeInScene");
+        brushInScene = GameObject.FindGameObjectWithTag("BrushInScene");
         InstantiateObjPrefab(instructionIndex);
         InstantiateArrowPrefab(instructionIndex);
         
@@ -27,7 +27,7 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && objectPrefabs[instructionIndex].tag == "Knife" && (activatedKnife == false))
+        if (Input.GetMouseButtonDown(0) && (activatedBrush == false))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -36,11 +36,11 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
             if (Physics.Raycast(ray, out hit))
             {
                 // Check if the ray hit the specific object
-                if (hit.collider.gameObject == knifeInScene)
+                if (hit.collider.gameObject == brushInScene)
                 {
-                    //Debug.Log("HIT");
+                    Debug.Log("HIT");
                     //isKnife = true;
-                    HandleKnifeInSceneClick();
+                    HandleBrushInSceneClick();
                     //InstantiateObjPrefab(instructionIndex);
                 }
             }
@@ -48,15 +48,15 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
         }
     }
 
-    private void HandleKnifeInSceneClick()
+    private void HandleBrushInSceneClick()
     {
         // Delete or deactivate the knife and arrow in the scene
-        Destroy(knifeInScene);
+        Destroy(brushInScene);
         Destroy(currentArrowPrefab);
 
         // Activate the knife handling logic
-        KnifeHandler.Instance.ActivateKnife();
-        activatedKnife = true;
+        BrushHandler.Instance.ActivateBrush();
+        activatedBrush = true;
 
     }
 

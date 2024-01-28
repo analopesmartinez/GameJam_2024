@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2459553735760721628}
   m_Layer: 0
-  m_Name: KnifePickedUp
-  m_TagString: Knife
+  m_Name: BrushPickedUp
+  m_TagString: Brush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,10 +44,10 @@ GameObject:
   - component: {fileID: 4590338385670005407}
   - component: {fileID: 4343778192616935605}
   - component: {fileID: 5787837198294416841}
-  - component: {fileID: 5230490188079297103}
+  - component: {fileID: 4195861216005846588}
   m_Layer: 0
-  m_Name: 'Knife '
-  m_TagString: Untagged
+  m_Name: Brush
+  m_TagString: Brush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,8 +61,8 @@ Transform:
   m_GameObject: {fileID: 3624591801792514012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.53, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2738606820396238538}
@@ -109,12 +109,12 @@ SpriteRenderer:
   m_SortingLayerID: -290036429
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b284dfc585d814740a9e8a0c343ec1dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0698c4e2899f204c9a8ff6358a3775e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.8, y: 7.2}
+  m_Size: {x: 13.03, y: 2.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -128,7 +128,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624591801792514012}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -176,89 +176,50 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.8, y: 7.2}
-    newSize: {x: 12.8, y: 7.2}
+    oldSize: {x: 13.03, y: 2.73}
+    newSize: {x: 13.03, y: 2.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.28, y: -1.52}
-      - {x: 1.0799999, y: -1.4499999}
-      - {x: 0.71999997, y: -1.3199999}
-      - {x: 0.44, y: -1.22}
-      - {x: 0.28, y: -1.16}
-      - {x: 0.19, y: -1.13}
-      - {x: 0.049999997, y: -1.0799999}
-      - {x: -0.03, y: -1.04}
-      - {x: -0.14999999, y: -1.01}
-      - {x: -0.24, y: -1}
-      - {x: -0.47, y: -0.91999996}
-      - {x: -0.64, y: -0.85999995}
-      - {x: -0.75, y: -0.82}
-      - {x: -0.90999997, y: -0.76}
-      - {x: -1.1899999, y: -0.65999997}
-      - {x: -1.28, y: -0.63}
-      - {x: -1.4499999, y: -0.57}
-      - {x: -1.67, y: -0.48999998}
-      - {x: -1.81, y: -0.44}
-      - {x: -1.92, y: -0.41}
-      - {x: -2.03, y: -0.39}
-      - {x: -2.28, y: -0.39}
-      - {x: -2.4199998, y: -0.42}
-      - {x: -2.56, y: -0.47}
-      - {x: -2.7, y: -0.57}
-      - {x: -2.79, y: -0.65999997}
-      - {x: -2.79, y: -0.69}
-      - {x: -2.77, y: -0.72999996}
-      - {x: -2.61, y: -0.77}
-      - {x: -2.51, y: -0.82}
-      - {x: -2.36, y: -0.88}
-      - {x: -2.25, y: -0.91999996}
-      - {x: -1.99, y: -1.02}
-      - {x: -1.5799999, y: -1.18}
-      - {x: -1.37, y: -1.26}
-      - {x: -1.04, y: -1.39}
-      - {x: -0.96, y: -1.42}
-      - {x: -0.63, y: -1.56}
-      - {x: -0.37, y: -1.65}
-      - {x: -0.28, y: -1.68}
-      - {x: -0.25, y: -1.68}
-      - {x: -0.21, y: -1.64}
-      - {x: -0.16, y: -1.39}
-      - {x: -0.04, y: -1.43}
-      - {x: 0.049999997, y: -1.4399999}
-      - {x: 0.17, y: -1.4699999}
-      - {x: 0.22999999, y: -1.5}
-      - {x: 0.34, y: -1.5699999}
-      - {x: 0.45, y: -1.62}
-      - {x: 0.55, y: -1.65}
-      - {x: 0.71, y: -1.67}
-      - {x: 0.78999996, y: -1.6899999}
-      - {x: 1.01, y: -1.8299999}
-      - {x: 1.14, y: -1.89}
-      - {x: 1.24, y: -1.89}
-      - {x: 1.38, y: -1.67}
-      - {x: 1.39, y: -1.63}
-      - {x: 1.35, y: -1.55}
-    - - {x: 0.90999997, y: -1.5899999}
-      - {x: 0.89, y: -1.56}
-      - {x: 0.9, y: -1.53}
-      - {x: 0.94, y: -1.52}
-      - {x: 0.98999995, y: -1.5699999}
-      - {x: 1, y: -1.61}
-      - {x: 0.98999995, y: -1.62}
-      - {x: 0.95, y: -1.61}
+    - - {x: 5.825, y: -1.105}
+      - {x: 6.015, y: -1.025}
+      - {x: 6.1949997, y: -0.905}
+      - {x: 6.205, y: -0.835}
+      - {x: 6.205, y: -0.33499998}
+      - {x: 5.955, y: -0.114999995}
+      - {x: -0.074999996, y: -0.105}
+      - {x: -0.24499999, y: -0.21499999}
+      - {x: -2.8049998, y: -0.21499999}
+      - {x: -2.975, y: -0.105}
+      - {x: -3.0549998, y: -0.114999995}
+      - {x: -3.0549998, y: 1.155}
+      - {x: -3.075, y: 1.175}
+      - {x: -5.745, y: 1.175}
+      - {x: -5.765, y: 1.155}
+      - {x: -5.765, y: -0.114999995}
+      - {x: -5.9449997, y: -0.114999995}
+      - {x: -6.1949997, y: -0.275}
+      - {x: -6.275, y: -0.435}
+      - {x: -6.275, y: -0.73499995}
+      - {x: -6.245, y: -0.875}
+      - {x: -6.075, y: -1.045}
+      - {x: -5.855, y: -1.105}
+      - {x: -3.0249999, y: -1.105}
+      - {x: -2.7649999, y: -0.955}
+      - {x: -0.295, y: -0.955}
+      - {x: -0.035, y: -1.105}
   m_UseDelaunayMesh: 0
---- !u!114 &5230490188079297103
+--- !u!114 &4195861216005846588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,11 +228,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3624591801792514012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf03f10657ffdcd46955a7daaaa7d1ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 86cbd57295075084ba168926610a73a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cuttingKnifePrefab: {fileID: 2390921695061203704, guid: 02a1f4765eda0f044af45ac0867393de, type: 3}
-  jitterAmount: 0.4
+  jitterAmount: 0.25
   impulseAmount: 2.5
   constantImpulseStrength: 1
   isDragging: 0

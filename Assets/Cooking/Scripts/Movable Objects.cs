@@ -29,7 +29,9 @@ public class MovableObject : MonoBehaviour
     private float zIndex;
     private Rigidbody2D rb;
     private Rigidbody2D childRB; 
-    private Collider2D collider;
+    private Collider2D genericCollider;
+
+    public bool isKnife = false;
 
     private float edgeColliderBelowRadius = 1.5f;
     // [SerializeField]
@@ -42,12 +44,12 @@ public class MovableObject : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
+        genericCollider = GetComponent<Collider2D>();
         childRB = edgeColliderChild.GetComponent<Rigidbody2D>();
         childRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.isKinematic = true;
 
-
+        isKnife = false;
 
     }
 
@@ -85,7 +87,9 @@ public class MovableObject : MonoBehaviour
         transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
 
         // Apply jitter effect
-        transform.position += (Vector3)Random.insideUnitCircle * jitterAmount;
+        Vector3 randomPos = Random.insideUnitCircle;
+        randomPos.z = 0f;
+        transform.position +=  randomPos * jitterAmount;
     }
 
     public void FindArrowObject()
@@ -99,7 +103,7 @@ public class MovableObject : MonoBehaviour
         }
         else
         {
-            Debug.Log("No arrow in Scene");
+            //Debug.Log("No arrow in Scene");
         }
 
     }
@@ -129,12 +133,12 @@ public class MovableObject : MonoBehaviour
             isInPosition = true;
             // Play animation
             // Fade out
-            CompleteStep();
+            //CompleteStep();
         }
 
-        if (collider is CircleCollider2D)
+        if (genericCollider is CircleCollider2D)
         {
-            CircleCollider2D circleCollider = (CircleCollider2D)collider;
+            CircleCollider2D circleCollider = (CircleCollider2D)genericCollider;
             edgeColliderBelowRadius = circleCollider.radius;
         }
 
@@ -152,9 +156,12 @@ public class MovableObject : MonoBehaviour
         }
         else
         {
-            ResetRotation();
-            if (!SpawnItemManager.Instance.isKnife)
+
+            Debug.Log(isKnife);
+            if (isKnife == false)
             {
+                ResetRotation();
+                //Debug.Log("IN POSITION AND DESTSROYING AND IS NOT KNIFE");
                 SpawnItemManager.Instance.DestroyArrowObjectAndLoadNext();
             }
          
@@ -167,6 +174,8 @@ public class MovableObject : MonoBehaviour
     {
         transform.rotation = Quaternion.identity;
         transform.position = correctDropAreaPosition;
+        //transform.parent.transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+
         //rb.isKinematic = true;
         //rb.gravityScale = 0f;
         rb.bodyType = RigidbodyType2D.Static;
@@ -176,8 +185,8 @@ public class MovableObject : MonoBehaviour
 
     void DestroyAndRespawn()
     {
-        SpawnItemManager.Instance.RespawnObject(objectIndex);
-        Destroy(gameObject);
+        SpawnItemManager.Instance.RespawnObject(SpawnItemManager.Instance.instructionIndex);
+        Destroy(transform.parent.gameObject);
     }
     void ApplyImpulse(float impulseAmount)
     {
@@ -196,11 +205,11 @@ public class MovableObject : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
-    void CompleteStep()
-    {
-        // Implement step completion, like playing an animation and fading out
-        Debug.Log("Completed Step");
-    }
+    //void CompleteStep()
+    //{
+    //    // Implement step completion, like playing an animation and fading out
+    //    //Debug.Log("Completed Step");
+    //}
 
     void OnDrawGizmos()
     {

@@ -7,6 +7,11 @@ TagManager:
   - Arrow
   - Knife
   - KnifeInScene
+  - Tomato
+  - Dirt
+  - Brush
+  - BrushInScene
+  - CutTomato
   layers:
   - Default
   - TransparentFX
@@ -52,4 +57,7 @@ TagManager:
     locked: 0
   - name: Instantiated Objects
     uniqueID: 4004930867
+    locked: 0
+  - name: Particles
+    uniqueID: 986783673
     locked: 0
