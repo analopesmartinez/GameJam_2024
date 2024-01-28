@@ -11,21 +11,34 @@ public class Movement : MonoBehaviour
     // private Animator animator;
     private float inputVertical;
     private float inputHorizontal;
+    public Rigidbody body;
+    public float force;
 
-
+    private void FixedUpdate()
+    {
+        inputVertical = Input.GetAxis("Vertical");
+        body.AddForce(transform.forward * inputVertical * moveSpeed * Time.deltaTime);
+    }
+    
+    
     void Update()
     {
+        //body.AddForce(Vector3.up * force);
         // Get input from keyboard
         inputVertical = Input.GetAxis("Vertical");
         inputHorizontal = Input.GetAxis("Horizontal");
 
         // Move the character forward or backward
-        transform.Translate(Vector3.forward * inputVertical * moveSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.forward * inputVertical * moveSpeed * Time.deltaTime);
+
 
         // Rotate the character left or right
         transform.Rotate(Vector3.up, inputHorizontal * turnSpeed * Time.deltaTime);
+
+
         
         // Set the Animator parameter to control the walk animation
         // animator.SetFloat("Speed", Mathf.Abs(inputVertical));
     }
+    
 }
