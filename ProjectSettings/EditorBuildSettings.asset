@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CookingUpdated.unity
     guid: 93e349507d19caf4682605537b81c0de
+  - enabled: 1
+    path: Assets/Scenes/BrushingTeeth.unity
+    guid: c9bd40b99bce73449b19b4719cf17552
   m_configObjects: {}
