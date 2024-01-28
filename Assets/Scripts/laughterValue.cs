@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class laughterValue : MonoBehaviour
     //public float sineValue;
     public float scale;
     public float noise;
+    public int level;
+    public bool valueChanging = true;
 
     private void Start()
     {
@@ -18,9 +21,27 @@ public class laughterValue : MonoBehaviour
         //sineValue = Mathf.Sin(Time.time);
 
         float x = Time.time * scale;
-        float y = transform.position.y * scale;
+        float y = scale;
 
         // Get a Perlin noise value (between 0 and 1)
-        noise = Mathf.Clamp(1.5f*Mathf.PerlinNoise(x, y),0,1);
+        if (valueChanging)
+        {
+        noise = Mathf.Clamp(1.5f*Mathf.PerlinNoise(x, y),0f,1f);
+        }
+        level = Mathf.FloorToInt(noise * 5);
+
+        if (!valueChanging)
+        {
+            goToCenter(level, noise);
+        }
+    }
+
+    void goToCenter(float currentLevel, float currentNoise)
+    {
+        float tagretPosition = (0.2f * currentLevel) + 0.1f;
+        //float currentPosition = noise;
+
+
+        float noise = Mathf.Lerp(currentNoise, tagretPosition, Time.deltaTime);
     }
 }
