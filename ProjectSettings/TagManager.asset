@@ -9,6 +9,9 @@ TagManager:
   - KnifeInScene
   - Tomato
   - CutTomato
+  - BrushInScene
+  - Dirt
+  - Brush
   layers:
   - Default
   - TransparentFX
