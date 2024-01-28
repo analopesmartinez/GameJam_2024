@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mat.unity
     guid: 656fed040b77711468259c6427ca1021
+  - enabled: 1
+    path: Assets/Scenes/Ana's scene.unity
+    guid: f4a290fa88f99bd46b1cca464fe7d7e7
+  - enabled: 1
+    path: Assets/Scenes/CookingUpdated.unity
+    guid: 93e349507d19caf4682605537b81c0de
   m_configObjects: {}

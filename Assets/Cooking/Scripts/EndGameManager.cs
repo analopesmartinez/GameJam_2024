@@ -51,6 +51,7 @@ public class EndGameManager : MonoBehaviour
 
         Debug.Log("ENDING GAME");
         //EndMinigame();
+        SceneManager.LoadScene("Ana's scene");
         UnloadCurrentScene();
     }
 
