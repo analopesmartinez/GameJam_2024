@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Cooking/Cooking.unity
+    guid: 11aaf2bf4c4c6e34bb87f266c183aa5d
+  - enabled: 1
+    path: Assets/Scenes/Mat.unity
+    guid: 656fed040b77711468259c6427ca1021
   m_configObjects: {}
