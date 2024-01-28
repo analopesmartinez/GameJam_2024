@@ -28,7 +28,7 @@ public class laughterValue : MonoBehaviour
         {
         noise = Mathf.Clamp(1.5f*Mathf.PerlinNoise(x, y),0f,1f);
         }
-        level = Mathf.FloorToInt(noise * 5);
+        level = Mathf.Clamp(Mathf.FloorToInt(noise * 5),0,4);
 
         if (!valueChanging)
         {

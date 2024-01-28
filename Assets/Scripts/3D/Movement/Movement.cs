@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(laughterScript.noise);
+        //Debug.Log(laughterScript.noise);
         //body.AddForce(Vector3.up * force);
         // Get input from keyboard
         inputVertical = Input.GetAxis("Vertical");
