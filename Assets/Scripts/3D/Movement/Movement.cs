@@ -14,6 +14,17 @@ public class Movement : MonoBehaviour
     public Rigidbody body;
     public float force;
 
+    private laughterValue laughterScript;
+
+    private void Start()
+    {
+        GameObject gameObjectWithScriptA = GameObject.Find("laughterValue");
+        if (gameObjectWithScriptA != null)
+        {
+            laughterScript = gameObjectWithScriptA.GetComponent<laughterValue>();
+        }
+    }
+
     private void FixedUpdate()
     {
         inputVertical = Input.GetAxis("Vertical");
@@ -23,6 +34,7 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
+        Debug.Log(laughterScript.noise);
         //body.AddForce(Vector3.up * force);
         // Get input from keyboard
         inputVertical = Input.GetAxis("Vertical");
@@ -33,7 +45,7 @@ public class Movement : MonoBehaviour
 
 
         // Rotate the character left or right
-        transform.Rotate(Vector3.up, inputHorizontal * turnSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, inputHorizontal * turnSpeed * Time.deltaTime * (2 * (laughterScript.level + 1)));
 
 
         
