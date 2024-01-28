@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 808551463188820486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4590338385670005407}
   - component: {fileID: 4343778192616935605}
   - component: {fileID: 5787837198294416841}
-  - component: {fileID: 8942973059083179299}
+  - component: {fileID: 5230490188079297103}
   m_Layer: 0
   m_Name: 'Knife '
   m_TagString: Untagged
@@ -60,14 +60,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624591801792514012}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.030810151, y: -0.007673569, z: -0.03500545, w: 0.99888265}
-  m_LocalPosition: {x: 0.28, y: -0.22, z: 0.08942012}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.53, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2738606820396238538}
   m_Father: {fileID: 2459553735760721628}
-  m_LocalEulerAnglesHint: {x: 3.498, y: -1.004, z: -4.045}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4590338385670005407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,8 +106,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -290036429
-  m_SortingLayer: 3
+  m_SortingLayerID: 1956258217
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b284dfc585d814740a9e8a0c343ec1dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -145,7 +145,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &5787837198294416841
 PolygonCollider2D:
@@ -176,7 +176,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -258,7 +258,7 @@ PolygonCollider2D:
       - {x: 0.98999995, y: -1.62}
       - {x: 0.95, y: -1.61}
   m_UseDelaunayMesh: 0
---- !u!114 &8942973059083179299
+--- !u!114 &5230490188079297103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,16 +267,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3624591801792514012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92c8f775f622388488a713018103dbd1, type: 3}
+  m_Script: {fileID: 11500000, guid: cf03f10657ffdcd46955a7daaaa7d1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgeColliderChild: {fileID: 5760960227248542462, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-  arrowObject: {fileID: 0}
+  cuttingKnifePrefab: {fileID: 2390921695061203704, guid: 02a1f4765eda0f044af45ac0867393de, type: 3}
   jitterAmount: 0.1
   impulseAmount: 2.5
-  constantImpulseStrength: 7
-  forceOffset: {x: 0.5, y: 0}
-  objectIndex: 0
+  constantImpulseStrength: 1
+  isDragging: 0
 --- !u!1001 &157596957070339430
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ TagManager:
   - Arrow
   - Knife
   - KnifeInScene
+  - Tomato
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Instantiated Objects
     uniqueID: 4004930867
+    locked: 0
+  - name: Knife
+    uniqueID: 1956258217
     locked: 0

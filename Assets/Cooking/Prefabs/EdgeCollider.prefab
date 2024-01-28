@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2607190543095180204
 Transform:
   m_ObjectHideFlags: 0
@@ -68,11 +68,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.2070603, y: -2.427483}
-  - {x: -1.2856605, y: -2.4419227}
-  - {x: 0.10749811, y: -2.5358522}
-  - {x: 1.2869818, y: -2.4477613}
-  - {x: 2.3468194, y: -2.459993}
+  - {x: -18.482494, y: -0.05147013}
+  - {x: 24.873981, y: 0.16696024}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -85,7 +82,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5760960227248542462}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
