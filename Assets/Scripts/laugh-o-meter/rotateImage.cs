@@ -30,7 +30,7 @@ public class rotateImage : MonoBehaviour
         {
             // Use the rotationValue from ScriptA
             rectTransform.rotation = Quaternion.Euler(0, 0, -scriptAInstance.noise*180);
-            Debug.Log(scriptAInstance.noise);
+            //Debug.Log(scriptAInstance.noise);
         }
 
         //rectTransform.rotation = Quaternion.Euler(0,0,rotationValue);
