@@ -21,6 +21,6 @@ public class cameraShaker : MonoBehaviour
         float z = amplitude * Mathf.Sin(Time.time * frequency);
 
         // Update the position of the GameObject.
-        transform.position = new Vector3(startPosition.x, startPosition.y + z, startPosition.z + z);
+        transform.position = new Vector3(startPosition.x, startPosition.y, startPosition.z + z);
     }
 }
