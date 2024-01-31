@@ -5,10 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cooking/Cooking.unity
     guid: 11aaf2bf4c4c6e34bb87f266c183aa5d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mat.unity
     guid: 656fed040b77711468259c6427ca1021
+  - enabled: 1
+    path: Assets/Scenes/Ana's scene.unity
+    guid: f4a290fa88f99bd46b1cca464fe7d7e7
+  - enabled: 1
+    path: Assets/Scenes/CookingUpdated.unity
+    guid: e12b736f367403b41bb7720a7b51bd22
+  - enabled: 1
+    path: Assets/Scenes/BrushingTeeth.unity
+    guid: 42fd1225b941465489b4520498ece9d5
   m_configObjects: {}

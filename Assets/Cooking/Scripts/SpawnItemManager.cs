@@ -9,12 +9,12 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
     public GameObject[] objectPrefabs;
     public Transform spawnObjectPositionTransform;
     public Vector3[] spawnArrowPositions;
-    [SerializeField]
-    private int instructionIndex = 0;
+    public int instructionIndex = 0;
     private GameObject currentArrowPrefab;
     public GameObject knifeInScene;
 
-    public bool isKnife = false;
+    //public bool isKnife = false;
+    public bool activatedKnife = false; 
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && objectPrefabs[instructionIndex].tag == "Knife")
+        if (Input.GetMouseButtonDown(0) && objectPrefabs[instructionIndex].tag == "Knife" && (activatedKnife == false))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -36,15 +36,28 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
             if (Physics.Raycast(ray, out hit))
             {
                 // Check if the ray hit the specific object
-                if (hit.collider.gameObject.tag == "KnifeInScene")
+                if (hit.collider.gameObject == knifeInScene)
                 {
-                    Debug.Log("HIT");
-                    isKnife = true;
-                    InstantiateObjPrefab(instructionIndex);
+                    //Debug.Log("HIT");
+                    //isKnife = true;
+                    HandleKnifeInSceneClick();
+                    //InstantiateObjPrefab(instructionIndex);
                 }
             }
          
         }
+    }
+
+    private void HandleKnifeInSceneClick()
+    {
+        // Delete or deactivate the knife and arrow in the scene
+        Destroy(knifeInScene);
+        Destroy(currentArrowPrefab);
+
+        // Activate the knife handling logic
+        KnifeHandler.Instance.ActivateKnife();
+        activatedKnife = true;
+
     }
 
     void InstantiateObjPrefab(int index)
@@ -53,17 +66,18 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
         {
             if (objectPrefabs[index].tag == "Knife")
             {
-             
-                if (isKnife)
-                {
-                    Debug.Log("Clicked On Knife");
-                    Destroy(knifeInScene);
-                    Destroy(currentArrowPrefab);
-                    Instantiate(objectPrefabs[index], spawnObjectPositionTransform.position, Quaternion.identity);
-                    //InstantiateArrowPrefab(instructionIndex);
-                    instructionIndex++;
-                    isKnife = false;
-                }
+                // ALL INGREDIENTS NOW ON CHOPPING BOARD
+
+                //if (isKnife)
+                //{
+                //    //Debug.Log("Clicked On Knife");
+                //    //Destroy(knifeInScene);
+                //    //Destroy(currentArrowPrefab);
+                //    //Instantiate(objectPrefabs[index], spawnObjectPositionTransform.position, Quaternion.identity);
+                //    //InstantiateArrowPrefab(instructionIndex);
+                //    //instructionIndex++;
+                //    //isKnife = false;
+                //}
             }
             else
             {
@@ -76,6 +90,8 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
             Debug.Log("No Object at index 0 in spawn objects array");
         }
 
+
+
     }
 
     void InstantiateArrowPrefab(int index)
@@ -86,7 +102,7 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
         }
         else
         {
-            Debug.Log("No next arrow positions");
+            //Debug.Log("No next arrow positions");
         }
     }
 
@@ -100,7 +116,6 @@ public class SpawnItemManager : SingletonMonobehaviour<SpawnItemManager>
 
     public void DestroyArrowObjectAndLoadNext()
     {
-        Debug.Log("CURRENT INSTURCTION" + instructionIndex);
         Destroy(currentArrowPrefab);
         instructionIndex++;
         InstantiateObjPrefab(instructionIndex);

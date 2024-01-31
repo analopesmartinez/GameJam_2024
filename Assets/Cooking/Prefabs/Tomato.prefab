@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5618253981781065443}
   m_Layer: 0
   m_Name: 'Tomato Sprite '
-  m_TagString: Untagged
+  m_TagString: Tomato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,9 +152,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059307583, y: -0.091974266}
+  m_Offset: {x: 0.02009964, y: -0.24881014}
   serializedVersion: 2
-  m_Radius: 2.1003654
+  m_Radius: 2.1787837
 --- !u!50 &5892026411183626179
 Rigidbody2D:
   serializedVersion: 4
@@ -180,7 +180,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &5618253981781065443
 MonoBehaviour:
@@ -195,10 +195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   edgeColliderChild: {fileID: 2769119802282368332}
+  arrowObject: {fileID: 0}
   jitterAmount: 1.3
   impulseAmount: 5.91
   constantImpulseStrength: 7
-  forceOffset: {x: 1.05, y: 0}
+  forceOffset: {x: 1.08, y: 0}
   objectIndex: 0
 --- !u!1001 &7610776624459927474
 PrefabInstance:
@@ -251,46 +252,6 @@ PrefabInstance:
     - target: {fileID: 5760960227248542462, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
       propertyPath: m_Name
       value: EdgeCollider
-      objectReference: {fileID: 0}
-    - target: {fileID: 5760960227248542462, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[0].x
-      value: -18.482494
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[0].y
-      value: -0.05147013
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[1].x
-      value: 24.873981
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[1].y
-      value: 0.16696024
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[2].y
-      value: -2.3839004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[4].x
-      value: 24.532871
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775926808099892929, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_Points.Array.data[4].y
-      value: -2.3840172
-      objectReference: {fileID: 0}
-    - target: {fileID: 8047900561961377938, guid: eb2a0ffccf023c54a95dc2c2cb25cec2, type: 3}
-      propertyPath: m_BodyType
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

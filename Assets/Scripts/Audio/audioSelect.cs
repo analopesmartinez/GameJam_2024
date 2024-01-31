@@ -16,11 +16,11 @@ public class audioSelect : MonoBehaviour
     AudioSource audioSource;
     void Start()
     {
-        stateAudioDict.Add(1, new int[] { 0, 8 });
-        stateAudioDict.Add(2, new int[] { 9, 15 });
-        stateAudioDict.Add(3, new int[] { 16, 20 });
-        stateAudioDict.Add(4, new int[] { 21, 25 });
-        stateAudioDict.Add(5, new int[] { 26, 32 });
+        stateAudioDict.Add(0, new int[] { 0, 8 });
+        stateAudioDict.Add(1, new int[] { 9, 15 });
+        stateAudioDict.Add(2, new int[] { 16, 20 });
+        stateAudioDict.Add(3, new int[] { 21, 25 });
+        stateAudioDict.Add(4, new int[] { 26, 31 });
 
         audioSource = GetComponent<AudioSource>();
 

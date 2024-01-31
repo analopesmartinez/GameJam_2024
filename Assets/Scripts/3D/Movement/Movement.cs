@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(laughterScript.noise);
+        //Debug.Log(laughterScript.noise);
         //body.AddForce(Vector3.up * force);
         // Get input from keyboard
         inputVertical = Input.GetAxis("Vertical");
@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
 
 
         // Rotate the character left or right
-        transform.Rotate(Vector3.up, inputHorizontal * turnSpeed * Time.deltaTime * (2 * (laughterScript.level + 1)));
+        transform.Rotate(Vector3.up, inputHorizontal * turnSpeed * Time.deltaTime * (4 * (laughterScript.level + 1)));
 
 
         
