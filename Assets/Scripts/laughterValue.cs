@@ -22,18 +22,22 @@ public class laughterValue : MonoBehaviour
     }
     void Update()
     {
-        clock += Time.deltaTime;
-        // Update sineValue each frame to be the sine of the elapsed time
-        //sineValue = Mathf.Sin(Time.time);
+        if(valueChanging)
+        {
+        incrementClock();
 
-        float x = clock * scale;
-        float y = scale;
+        }
+        
+        // To go to the center, I need to increment/decrement the output of
+        // the noise value itself
 
         // Get a Perlin noise value (between 0 and 1)
         //if (valueChanging)
         //{
-        noise = Mathf.Clamp(1.2f*Mathf.PerlinNoise(x, y),0f,1f);
         //}
+
+        // Probably put inside 'incrementClock()'
+        //Calculate level
         level = Mathf.Clamp(Mathf.FloorToInt(noise * 5),0,4);
 
         //if (!valueChanging)
@@ -43,9 +47,12 @@ public class laughterValue : MonoBehaviour
     }
 
 
-    void changeValue()
+    void incrementClock()
     {
-
+        float x = clock * scale;
+        float y = scale;
+        clock += Time.deltaTime;
+        noise = Mathf.Clamp(1.2f*Mathf.PerlinNoise(x, y),0f,1f);
     }
     void goToCenter(float currentLevel, float currentNoise)
     {

@@ -7307,6 +7307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1075452846988811260, guid: 72abe3b28c6d21643a9edd01cc21bc41, type: 3}
+      propertyPath: l
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4526361324135828716, guid: 72abe3b28c6d21643a9edd01cc21bc41, type: 3}
       propertyPath: m_Name
       value: laughterMechanics
